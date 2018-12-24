@@ -18,3 +18,9 @@ Since the label is given, we will do supervised training on our dataset. Our mai
 1. Dataset Preparation - Load our dataset and perform basic pre-processing. E.g. figure our our dataset's composition and split dataset into train and test sets.
 2. Feature Engineering - Transform raw dataset into flat features that can be used in our machine learning model.
 3. Model Training - Train the model on labelled dataset.
+
+
+### Step1: Dataset Preparation
+
+Let's have a glance of our dataset first. There're 62204 documents in total and their distribution is shown below:
+![](images/data_plot.jpeg)
