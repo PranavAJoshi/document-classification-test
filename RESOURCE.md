@@ -12,3 +12,8 @@ http://pandas.pydata.org/pandas-docs/version/0.23/generated/pandas.read_csv.html
 ```
 https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
 ```
+
+#### Save and Load Machine Learning Models in Python with scikit-learn
+```
+https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
+```
