@@ -28,3 +28,10 @@ Since the label is given, we will do supervised training on our dataset. Our mai
 Let's have a glance of our dataset first. There're 62204 documents in total and their distribution is shown below:
 
 ![](images/data_plot.jpeg)
+
+Then we need to split our dataset for training and testing. The training part is used to train our model to make correct classification. And the testing part is used to validate the model's correctness. 
+The widely used machine learning library *sklearn* provides us with a powerful method-*model_selection.train_test_split*- to do this split. 
+The doc for *model_selection.train_test_split* is provided below:
+```
+https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
+```
