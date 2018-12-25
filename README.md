@@ -75,3 +75,14 @@ After we vectorize our data, let's print and check the numeric vector.
   (49762, 134960)	0.12747884824803968
 ```
 Now we are good to use this feature set to train our model.
+
+
+
+### Step 3: Model Training
+
+Now it's time to build a model for our training. In this problem we choose the popular classification model - Logistic Regression, which both works on continuous data and discrete data. The document type is predicted by the refined frequency of each word.
+```
+model = LogisticRegression()
+model.fit(tfidf, Y_train)
+```
+Finally we achieved the accuracy of 85.73%, which is pretty good.
