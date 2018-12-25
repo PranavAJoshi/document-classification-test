@@ -31,3 +31,9 @@ https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_
 ```
 https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
 ```
+
+
+#### Designing a Machine Learning model and deploying it using Flask on Heroku
+```
+https://towardsdatascience.com/designing-a-machine-learning-model-and-deploying-it-using-flask-on-heroku-9558ce6bde7b
+```
