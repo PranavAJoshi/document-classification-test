@@ -23,7 +23,7 @@ Since the label is given, we will do supervised training on our dataset. Our mai
 
 
 
-### Step1: Dataset Preparation
+### Step 1: Dataset Preparation
 
 Let's have a glance of our dataset first. There're 62204 documents in total and their distribution is shown below:
 
@@ -35,3 +35,37 @@ The doc for *model_selection.train_test_split* is provided below:
 ```
 https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
 ```
+
+
+
+### Step 2: Feature Engineering
+
+Our raw obscured text dataset cannot work directly with machine learning algorithms, which needs numeric data representation. So in this step we need to convert the text to numbers. 
+
+A simple and effective model for thinking about text documents in machine learning is called the *Bag-of-Words Model*, or *BoW*. The model is simple in that it throws away all of the order information in the words and focuses on the occurrence of words in a document. The *sklearn* library provides 3 different schemes(Word Counts with *CountVectorizer*, Word Frequencies with *TfidfVectorizer* and Hashing with *HashingVectorizer*) that we can use to achieve this goal, they are introduced in the following link:
+```
+https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-learn/
+```
+In our solution we will use *TfidfVectorizer* because it's a refined version of *CountVectorizer* and easier to implement than *HashingVectorizer*. Since the vectorizer requires the raw_documents to be str, unicode or file objects type, we will convert our dataframe into unicode before transforming the data. 
+
+After we vectorize our data, let's print and check the numeric vector.
+```
+  (0, 876448)	0.019543002423305235
+  (0, 875142)	0.08848690989316463
+  (0, 873052)	0.023710767681637043
+  (0, 870760)	0.08818256683793115
+  (0, 870189)	0.027476905355595008
+  (0, 869897)	0.03056342830737312
+  (0, 863826)	0.015110268037881867
+  (0, 862915)	0.019683220920096518
+  :	:
+  (49762, 51494)	0.036718963942246566
+  (49762, 46393)	0.0736156545180594
+  (49762, 31103)	0.04474390770983401
+  (49762, 30617)	0.05245314736807223
+  (49762, 30119)	0.0801536701925495
+  (49762, 11862)	0.12520145925333384
+  (49762, 11523)	0.014843975855234373
+  (49762, 10932)	0.0646270429142683
+```
+Now we are good to use this feature set to train our model.
