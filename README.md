@@ -86,3 +86,9 @@ model = LogisticRegression()
 model.fit(tfidf, Y_train)
 ```
 Finally we achieved the accuracy of 85.73%, which is pretty good.
+
+
+
+### Deploy Model
+
+Originally I run my application on Anaconda's Jupyter notebook and the whole process went smoothly. When I tried to deploy via Amazon SageMaker, the memory required by the training process reached the limit of my free account. In order to find an alternative way, I turned to use Flask and Heroku to deploy it first.
