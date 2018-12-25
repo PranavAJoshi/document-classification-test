@@ -3,6 +3,16 @@
 https://www.analyticsvidhya.com/blog/2018/04/a-comprehensive-guide-to-understand-and-implement-text-classification-in-python/
 ```
 
+#### How to Prepare Text Data for Machine Learning with scikit-learn
+```
+https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-learn/
+```
+
+#### Save and Load Machine Learning Models in Python with scikit-learn
+```
+https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
+```
+
 #### pandas
 ```
 - read_csv
