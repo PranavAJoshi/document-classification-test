@@ -91,4 +91,6 @@ Finally we achieved the accuracy of 85.73%, which is pretty good.
 
 ### Deploy Model
 
-Originally I run my application on Anaconda's Jupyter notebook and the whole process went smoothly. When I tried to deploy via Amazon SageMaker, the memory required by the training process reached the limit of my free account. In order to find an alternative way, I turned to use Flask and Heroku to deploy it first.
+Originally I run my application on Anaconda's Jupyter and the whole process goes smoothly. When I try to deploy via Amazon SageMaker, the RAM required by the training process reaches the limit of my free account. In order to find an alternative way, I turn to use Flask and Heroku to deploy it.
+
+At first I write Flask on Jupyter and design templates HTML for basic input UI as required. There's a text input and a submit button for the form. The result is acquired successfully. The next step should be to refine UI and delve into webservice details.
