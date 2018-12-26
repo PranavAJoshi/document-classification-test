@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn import model_selection
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+import pickle
 
 # Get dataset from csv file
 names = ['type', 'content']
@@ -28,3 +29,7 @@ model.fit(tfidf, Y_train)
 
 # Accuracy = 0.8573265814645125
 print(model.score(tfidf2, Y_test))
+
+# Store model and vectorizer
+pickle.dump(model, open('LRmodel.pkl', 'wb'))
+pickle.dump(vectorizer, open('vec.pkl', 'wb'))
