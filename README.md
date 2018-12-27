@@ -23,7 +23,7 @@ Since the label is given, we will do supervised training on our dataset. Our mai
 
 
 
-### Step 1: Dataset Preparation
+#### Step 1: Dataset Preparation
 
 Let's have a glance of our dataset first. There're 62204 documents in total and their distribution is shown below:
 
@@ -38,7 +38,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_
 
 
 
-### Step 2: Feature Engineering
+#### Step 2: Feature Engineering
 
 Our raw obscured text dataset cannot work directly with machine learning algorithms, which needs numeric data representation. So in this step we need to convert the text to numbers. 
 
@@ -58,13 +58,7 @@ After we vectorize our data, let's print and check the numeric vector.
   (0, 812021)	0.17521859465377745
   (0, 703628)	0.11798909834518305
   (0, 601896)	0.09424065432278207
-  (0, 647355)	0.051131207469136755
-  (0, 760982)	0.021340550813112345
-  (0, 527149)	0.022955860978774195
   :	:
-  (49762, 533557)	0.10429172387014334
-  (49762, 206304)	0.12160800603092504
-  (49762, 652156)	0.11554350013295027
   (49762, 726701)	0.1252014592533339
   (49762, 691873)	0.12747884824803968
   (49762, 857232)	0.11654331817294304
@@ -78,7 +72,7 @@ Now we are good to use this feature set to train our model.
 
 
 
-### Step 3: Model Training
+#### Step 3: Model Training
 
 Now it's time to build a model for our training. In this problem we choose the popular classification model - Logistic Regression, which both works on continuous data and discrete data. The document type is predicted by the refined frequency of each word.
 ```
@@ -91,6 +85,54 @@ Finally we achieved the accuracy of 85.73%, which is pretty good.
 
 ### Deploy Model
 
-Originally I run my application on Anaconda's Jupyter and the whole process goes smoothly. When I try to deploy via Amazon SageMaker, the RAM required by the training process reaches the limit of my free account. In order to find an alternative way, I turn to use Flask and Heroku to deploy it.
+Because of previous Heroku project deployment experience, I plan to deploy on **Heroku** at first. If there's spare time after the first version completed, I will try to use AWS to deploy.
 
-At first I write Flask on Jupyter and design templates HTML for basic input UI as required. There's a text input and a submit button for the form. The result is acquired successfully. The next step should be to refine UI and delve into webservice details.
+The general layout of my deployed project:
+```
+/heavywater
+   ├── templates
+   │   └── index.html
+   │   └── result.html
+   ├── static
+   │   └── home.css
+   │   └── result.css
+   ├── venv/
+   ├── Procfile
+   ├── requirements.txt
+   ├── .gitignore
+   ├── LRmodel.pkl
+   └── app.py
+```
+
+#### Preparation Step
+
+**Flask** is a framework for small scale Python web development. In this project it's basically set up for routing and achieving our prediction functionality. In terms of the UI part, Flask supports template to render HTML to the browser. There're two HTML templates in the project, one for input and one for output. Correspondingly, two CSS files are attached for each HTML.
+
+In order to deploy Flask on Heroku, several preparation steps should be done at first.
+
+Since we have several libraries like Flask and sklearn, we need a virtual environment to manage the dependencies. And Python 3 comes bundled with the **venv** module to create virtual environments and that's what we use here.
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+After virtual environment is set up, we can use **pip** to install libraries just like this:
+```
+pip install flask
+```
+
+Besides, a server is needed to handle real requests and here we will use **Gunicorn**, which is compatible with various web frameworks and fairly speedy. And a **Procfile** is added to the root directory to tell Heroku the entry point for our application and how to start the web server. In Procfile we will write this line:
+```
+web: gunicorn app:app
+```
+
+And importantly, we also need to tell Heroku what libraries we intend to use to run this application successfully. Everything is writen to a **requirements.txt** file. But we can use pip to help us write:
+```
+pip freeze > requirements.txt
+```
+
+After these preparation step, we can safely deploy our app on Heroku.
+
+
+
+#### Deploy Step
