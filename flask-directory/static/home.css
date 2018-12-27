@@ -4,6 +4,12 @@ body {
     background: url('http://en.freejpg.com.ar/asset/900/fc/fce8/F100011311.jpg');
 }
 
+p {
+    color: orchid; 
+    font-family: sans-serif;
+    font-size: 120%;
+}
+
 input[type=text] {
     width: 60%;
     padding: 42px 20px;
@@ -16,7 +22,7 @@ input[type=text] {
 
 input[type=submit] {
     width: 60%;
-    background-color: #4CAF50;
+    background-color: orchid;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
