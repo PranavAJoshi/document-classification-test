@@ -10,7 +10,7 @@ Generally, the goal of this problem is to build a text classification model base
 CANCELLATION NOTICE,641356219cbc f95d0bea231b ... [lots more words] ... 52102c70348d b32153b8b30c
 ```
 
-So each document is composed of a label which indicates document type at its front, and a series of obscured OCR(Optical Character Recognition) data seperated by space and each of them maps to a unique word in original document.
+So each document is composed of a label which indicates document type at its beginning, and a series of obscured OCR(Optical Character Recognition) data seperated by space and each of them maps to a unique word in original document.
 
 
 
@@ -42,7 +42,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_
 
 Our raw obscured text dataset cannot work directly with machine learning algorithms, which needs numeric data representation. So in this step we need to convert the text to numbers. 
 
-A simple and effective model for thinking about text documents in machine learning is called the *Bag-of-Words Model*, or *BoW*. The model is simple in that it throws away all of the order information in the words and focuses on the occurrence of words in a document. The *sklearn* library provides 3 different schemes(Word Counts with *CountVectorizer*, Word Frequencies with *TfidfVectorizer* and Hashing with *HashingVectorizer*) that we can use to achieve this goal, they are introduced in the following link:
+A simple and effective model for thinking about text documents in machine learning is called the *Bag-of-Words* Model, or *BoW*. The model is simple in that it throws away all of the order information in the words and focuses on the occurrence of words in a document. The *sklearn* library provides 3 different schemes(Word Counts with *CountVectorizer*, Word Frequencies with *TfidfVectorizer* and Hashing with *HashingVectorizer*) that we can use to achieve this goal, they are introduced in the following link:
 ```
 https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-learn/
 ```
