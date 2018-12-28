@@ -81,7 +81,9 @@ model.fit(tfidf, Y_train)
 ```
 Finally we achieved the accuracy of 85.73%, which is pretty good.
 
+The confusion matrix:
 
+![](images/cm.png)
 
 ### Deploy Model
 
