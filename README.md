@@ -30,8 +30,8 @@ Let's have a glance of our dataset first. There're 62204 documents in total and 
 ![](images/data_plot.jpeg)
 
 Then we need to split our dataset for training and testing. The training part is used to train our model to make correct classification. And the testing part is used to validate the model's correctness. 
-The widely used machine learning library *sklearn* provides us with a powerful method-*model_selection.train_test_split*- to do this split. 
-The doc for *model_selection.train_test_split* is provided below:
+The widely used machine learning library **sklearn** provides us with a powerful method-**model_selection.train_test_split**- to do this split. 
+The doc for **model_selection.train_test_split** is provided below:
 ```
 https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
 ```
@@ -42,11 +42,11 @@ https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_
 
 Our raw obscured text dataset cannot work directly with machine learning algorithms, which needs numeric data representation. So in this step we need to convert the text to numbers. 
 
-A simple and effective model for thinking about text documents in machine learning is called the *Bag-of-Words* Model, or *BoW*. The model is simple in that it throws away all of the order information in the words and focuses on the occurrence of words in a document. The *sklearn* library provides 3 different schemes(Word Counts with *CountVectorizer*, Word Frequencies with *TfidfVectorizer* and Hashing with *HashingVectorizer*) that we can use to achieve this goal, they are introduced in the following link:
+A simple and effective model for thinking about text documents in machine learning is called the **Bag-of-Words** Model, or **BoW**. The model is simple in that it throws away all of the order information in the words and focuses on the occurrence of words in a document. The **sklearn** library provides 3 different schemes(Word Counts with **CountVectorizer**, Word Frequencies with **TfidfVectorizer** and Hashing with **HashingVectorizer**) that we can use to achieve this goal, they are introduced in the following link:
 ```
 https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-learn/
 ```
-In our solution we will use *TfidfVectorizer* because it's a refined version of *CountVectorizer* and easier to implement than *HashingVectorizer*. Since the vectorizer requires the raw_documents to be str, unicode or file objects type, we will convert our dataframe into unicode before transforming the data. 
+In our solution we will use **TfidfVectorizer** because it's a refined version of **CountVectorizer** and easier to implement than **HashingVectorizer**. Since the vectorizer requires the raw_documents to be str, unicode or file objects type, we will convert our dataframe into unicode before transforming the data. 
 
 After we vectorize our data, let's print and check the numeric vector.
 ```
@@ -87,7 +87,7 @@ The confusion matrix:
 
 ### Deploy Model
 
-Because of previous Heroku project deployment experience, I plan to deploy on **Heroku** at first. If there's spare time after the first version completed, I will try to use AWS to deploy.
+Because of previous Heroku project deployment experience, I plan to deploy on Heroku at first. If there's spare time after the first version completed, I will try to use AWS to deploy.
 
 The general layout of my deployed project:
 ```
