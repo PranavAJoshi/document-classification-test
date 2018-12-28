@@ -14,10 +14,10 @@ dataframe = pandas.read_csv('shuffled-full-set-hashed.csv', names=names)
 print(dataframe.type.size)
 dataframe.type.value_counts().plot(kind='pie', figsize=(16,16))
 
-# Split dataset
+# Split dataset for train and test
 X_train, X_test, Y_train, Y_test = model_selection.train_test_split(dataframe, dataframe.type, test_size=0.20, random_state=0)
 
-# Feature engineering
+# Feature engineering - transform raw text data to numeric vectorizer
 vectorizer = TfidfVectorizer()
 tfidf = vectorizer.fit_transform(X_train.content.values.astype('U'))
 print(tfidf)
