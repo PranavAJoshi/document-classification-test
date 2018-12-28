@@ -6,10 +6,14 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css')}}">
   </head>
   <body>
-      <form method="POST" action="/predict" enctype="text/html">
-        <input type="text" name="content">
-        <br>
-        <input type="submit" value="submit">
-      </form>
+    <h1>HeavyWater Machine Learning Project</h1>
+    <p>Copy and paste the content you want classify below:</p>
+    <form method="POST" action="/predict" enctype="text/html">
+      <div class="ui input">
+        <input type="text" name="content" placeholder="document content...">
+      </div>
+      <br>
+      <input type="submit" value="submit">
+    </form>
   </body>
 </html>
