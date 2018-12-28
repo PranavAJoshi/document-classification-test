@@ -136,3 +136,33 @@ After these preparation step, we can safely deploy our app on Heroku.
 
 
 #### Deploy Step
+
+Basically, we will create an app on Heroku and use git to push the repository on Heroku.
+
+So at first, log in by execute folloiwing command
+```
+heroku login
+```
+
+After enter both account and password, we can create a new app for our project on Heroku
+```
+heroku create
+```
+This will generate a URL for the app and another one for remote git repository.
+
+Initialize the local git repository, add whole project and commit before push
+```
+git init
+git add .
+git commit -m "initial commit"
+```
+
+Finally, push our local repository to remote
+```
+git push heroku master
+```
+
+Now, you are free to open the web and enter the document content you want to classify on
+```
+https://serene-castle-92796.herokuapp.com
+```
