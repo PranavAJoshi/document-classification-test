@@ -1,7 +1,7 @@
 # Import required modules
 import flask
 import pickle
-from flask import Flask, json, request
+from flask import Flask, request
 
 # Create an instance of Flask and declare variables for our model
 app = Flask(__name__)
