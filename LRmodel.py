@@ -17,7 +17,7 @@ dataframe.type.value_counts().plot(kind='pie', figsize=(16,16))
 # Split dataset for train and test
 X_train, X_test, Y_train, Y_test = model_selection.train_test_split(dataframe, dataframe.type, test_size=0.20, random_state=0)
 
-# Feature engineering - transform raw text data to numeric vectorizer
+# Feature engineering - transform raw text data to numeric matrix
 vectorizer = TfidfVectorizer()
 tfidf = vectorizer.fit_transform(X_train.content.values.astype('U'))
 print(tfidf)
