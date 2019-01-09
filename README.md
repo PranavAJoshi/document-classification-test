@@ -48,7 +48,7 @@ https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-lea
 ```
 In our solution we will use **TfidfVectorizer** because it's a refined version of **CountVectorizer** and easier to implement than **HashingVectorizer**. Since the vectorizer requires the raw_documents to be str, unicode or file objects type, we will convert our dataframe into unicode before transforming the data. 
 
-After we vectorize our data, let's print and check the numeric vector.
+After we vectorize our data, let's print and check the numeric matrix.
 ```
   (0, 290693)	0.11966728067482815
   (0, 630669)	0.027930338102784877
