@@ -23,7 +23,7 @@ tfidf = vectorizer.fit_transform(X_train.content.values.astype('U'))
 print(tfidf)
 tfidf2 = vectorizer.transform(X_test.content.values.astype('U'))
 
-# Build model
+# Build model, penalty = "l2", C = 1.0
 model = LogisticRegression()
 model.fit(tfidf, Y_train)
 
